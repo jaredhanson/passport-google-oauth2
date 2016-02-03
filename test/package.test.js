@@ -1,13 +1,16 @@
-/* global describe, it */
+/* global describe, it, expect */
 
-var pkg = require('..');
-var expect = require('chai').expect;
+var strategy = require('..');
 
-
-describe('passport google oauth2', function() {
-  
-  it('should export hello world', function() {
-    expect(pkg.hello).to.equal('world');
+describe('passport-google-oauth2', function() {
+    
+  it('should export Strategy constructor', function() {
+    expect(strategy.Strategy).to.be.a('function');
+  });
+    
+  it('should export Strategy constructor as module', function() {
+    expect(strategy).to.be.a('function');
+    expect(strategy).to.equal(strategy.Strategy);
   });
   
 });
