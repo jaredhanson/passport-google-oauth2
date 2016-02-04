@@ -71,4 +71,24 @@ describe('OpenIDProfile.parse', function() {
     });
   });
   
+  describe('profile without picture attribute', function() {
+    var profile;
+    
+    before(function(done) {
+      fs.readFile('test/fixtures/userinfo/userinfo-no-picture.json', 'utf8', function(err, data) {
+        if (err) { return done(err); }
+        profile = Profile.parse(data);
+        done();
+      });
+    });
+    
+    it('should parse profile', function() {
+      expect(profile.id).to.equal('111111111111111111111');
+      expect(profile.displayName).to.equal('');
+      expect(profile.name).to.be.undefined;
+      expect(profile.emails).to.be.undefined;
+      expect(profile.photos).to.be.undefined;
+    });
+  });
+  
 });
