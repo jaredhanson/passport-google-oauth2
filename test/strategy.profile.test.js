@@ -144,6 +144,53 @@ describe('Strategy#userProfile', function() {
       expect(profile._json).to.be.an('object');
     });
   });
+
+  describe('fetched from OpenID V2 API user info endpoint', function() {
+    var strategy = new GoogleStrategy({
+        clientID: 'ABC123',
+        clientSecret: 'secret',
+        userProfileURL: 'https://www.googleapis.com/userinfo/v2/me'
+      }, function() {});
+  
+    strategy._oauth2.get = function(url, accessToken, callback) {
+      if (url != 'https://www.googleapis.com/userinfo/v2/me') { return callback(new Error('incorrect url argument')); }
+      if (accessToken != 'token') { return callback(new Error('incorrect token argument')); }
+    
+      var body = '{\n "sub": "111111111111111111111",\n "name": "Jared Hanson",\n "given_name": "Jared",\n "family_name": "Hanson",\n "profile": "https://plus.google.com/AAAAAAA",\n "picture": "https://lh3.googleusercontent.com/-AAAAAAAAAAA/AAAAAAAAAAA/AAAAAAAAAAA/AAAAAAAAAAA/photo.jpg",\n "email": "example@gmail.com",\n "email_verified": true,\n "gender": "male"\n}\n';
+      callback(null, body, undefined);
+    };
+    
+    
+    var profile;
+    
+    before(function(done) {
+      strategy.userProfile('token', function(err, p) {
+        if (err) { return done(err); }
+        profile = p;
+        done();
+      });
+    });
+    
+    it('should parse profile', function() {
+      expect(profile.provider).to.equal('google');
+      
+      expect(profile.id).to.equal('111111111111111111111');
+      expect(profile.displayName).to.equal('Jared Hanson');
+      expect(profile.name.familyName).to.equal('Hanson');
+      expect(profile.name.givenName).to.equal('Jared');
+      expect(profile.emails[0].value).to.equal('example@gmail.com');
+      expect(profile.emails[0].verified).to.equal(true);
+      expect(profile.photos[0].value).to.equal('https://lh3.googleusercontent.com/-AAAAAAAAAAA/AAAAAAAAAAA/AAAAAAAAAAA/AAAAAAAAAAA/photo.jpg');
+    });
+    
+    it('should set raw property', function() {
+      expect(profile._raw).to.be.a('string');
+    });
+    
+    it('should set json property', function() {
+      expect(profile._json).to.be.an('object');
+    });
+  });
   
   describe('error caused by invalid token when using Google+ API', function() {
     var strategy = new GoogleStrategy({
