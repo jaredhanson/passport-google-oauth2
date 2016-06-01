@@ -48,7 +48,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=select_account&login_hint=john%40mail.com&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=select_account&login_hint=john%40mail.com&response_type=code&client_id=ABC123');
     });
   }); // authorization request with documented parameters
   
@@ -74,7 +74,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?display=touch&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?display=touch&response_type=code&client_id=ABC123');
     });
   }); // authorization request with documented parameters from OpenID Connect
   
@@ -100,7 +100,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?include_granted_scopes=true&response_type=code&redirect_uri=&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?include_granted_scopes=true&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&client_id=ABC123');
     });
   }); // authorization request with incremental authorization parameters
   
@@ -126,7 +126,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?hd=mycollege.edu&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?hd=mycollege.edu&response_type=code&client_id=ABC123');
     });
   }); // authorization request with Google Apps for Work parameters
   
@@ -152,7 +152,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?hd=mycollege.edu&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?hd=mycollege.edu&response_type=code&client_id=ABC123');
     });
   }); // authorization request with Google Apps for Work parameters, in abbreviated form
   
@@ -178,7 +178,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?request_visible_actions=http%3A%2F%2Fschema.org%2FAddAction%20http%3A%2F%2Fschema.org%2FReviewAction&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?request_visible_actions=http%3A%2F%2Fschema.org%2FAddAction%20http%3A%2F%2Fschema.org%2FReviewAction&response_type=code&client_id=ABC123');
     });
   }); // authorization request with Google+ parameters
   
@@ -204,7 +204,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?openid.realm=http%3A%2F%2Fwww.example.com%2F&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?openid.realm=http%3A%2F%2Fwww.example.com%2F&response_type=code&client_id=ABC123');
     });
   }); // authorization request with OpenID 2.0 migration parameters
   
@@ -230,7 +230,7 @@ describe('Strategy', function() {
     });
   
     it('should be redirected', function() {
-      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?approval_prompt=force&user_id=bob%40gmail.com&response_type=code&redirect_uri=&client_id=ABC123');
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?approval_prompt=force&user_id=bob%40gmail.com&response_type=code&client_id=ABC123');
     });
   }); // authorization request with undocumented parameters
   
