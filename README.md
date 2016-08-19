@@ -17,7 +17,9 @@ unobtrusively integrated into any application or framework that supports
 
 ## Install
 
-    $ npm install passport-google-oauth20
+```bash
+$ npm install passport-google-oauth20
+```
 
 ## Usage
 
@@ -40,19 +42,21 @@ refresh token, as well as `profile` which contains the authenticated user's
 Google profile.  The `verify` callback must call `cb` providing a user to
 complete authentication.
 
-    var GoogleStrategy = require('passport-google-oauth20').Strategy;
+```javascript
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
-    passport.use(new GoogleStrategy({
-        clientID: GOOGLE_CLIENT_ID,
-        clientSecret: GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://www.example.com/auth/google/callback"
-      },
-      function(accessToken, refreshToken, profile, cb) {
-        User.findOrCreate({ googleId: profile.id }, function (err, user) {
-          return cb(err, user);
-        });
-      }
-    ));
+passport.use(new GoogleStrategy({
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://www.example.com/auth/google/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
+```
 
 #### Authenticate Requests
 
@@ -62,15 +66,17 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-    app.get('/auth/google',
-      passport.authenticate('google', { scope: ['profile'] }));
+```javascript
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile'] }));
 
-    app.get('/auth/google/callback', 
-      passport.authenticate('google', { failureRedirect: '/login' }),
-      function(req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/');
-      });
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+  ```
 
 ## Examples
 
