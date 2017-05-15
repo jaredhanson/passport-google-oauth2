@@ -32,6 +32,10 @@ Your application will be issued a client ID and client secret, which need to be
 provided to the strategy.  You will also need to configure a redirect URI which
 matches the route in your application.
 
+#### Enable Google Plus API
+
+Go to: [Google Plus API page in Developers Console](https://console.developers.google.com/apis/api/plus.googleapis.com/overview) and click on the Enable button next to the API name. Without it the redirect inside your Feathers app will result in Internal Server Error.
+
 #### Configure Strategy
 
 The Google authentication strategy authenticates users using a Google account
