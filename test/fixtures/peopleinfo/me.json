@@ -1,0 +1,91 @@
+{
+    "resourceName": string,
+    "etag": string,
+    "metadata": {
+      "sources": [
+        {
+          "type": enum(SourceType),
+          "id": string,
+          "etag": string,
+          "updateTime": string,
+          "profileMetadata": {
+            "objectType": OBJECT_TYPE_UNSPECIFIED | PERSON | PAGE,
+            "userTypes": [
+              USER_TYPE_UNKNOWN | GOOGLE_USER | GPLUS_USER | GOOGLE_APPS_USER
+            ],
+          },
+        }
+      ],
+      "previousResourceNames": [
+        string
+      ],
+      "linkedPeopleResourceNames": [
+        string
+      ],
+      "deleted": boolean,
+      "objectType": enum(ObjectType),
+    },
+    "locales": [
+      {
+        "value": string,
+      }
+    ],
+    "names": [
+      {
+        "displayName": string,
+        "displayNameLastFirst": string,
+        "familyName": string,
+        "givenName": string,
+        "middleName": string,
+        "honorificPrefix": string,
+        "honorificSuffix": string,
+        "phoneticFullName": string,
+        "phoneticFamilyName": string,
+        "phoneticGivenName": string,
+        "phoneticMiddleName": string,
+        "phoneticHonorificPrefix": string,
+        "phoneticHonorificSuffix": string,
+      }
+    ],
+    "nicknames": [
+      {
+        "value": string,
+        "type": DEFAULT|MAIDEN_NAME|INITIALS|GPLUS|OTHER_NAME|,
+      }
+    ],
+    "coverPhotos": [
+      {
+        "url": string,
+        "default": boolean,
+      }
+    ],
+    "genders": [
+      {
+        "value": string,
+        "formattedValue": string,
+      }
+    ],
+    "birthdays": [
+      {
+        "date": {
+          "year": number,
+          "month": number,
+          "day": number,
+        },
+        "text": string,
+      }
+    ],
+    "addresses": [
+      {
+        object(Address)
+      }
+    ],
+    "emailAddresses": [
+      {
+        "value": string,
+        "type": string,
+        "formattedType": string,
+        "displayName": string,
+      }
+    ]
+  }
