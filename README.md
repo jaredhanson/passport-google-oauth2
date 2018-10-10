@@ -1,11 +1,5 @@
 # passport-google-oauth20
 
-[![Build](https://img.shields.io/travis/jaredhanson/passport-google-oauth2.svg)](https://travis-ci.org/jaredhanson/passport-google-oauth2)
-[![Coverage](https://img.shields.io/coveralls/jaredhanson/passport-google-oauth2.svg)](https://coveralls.io/r/jaredhanson/passport-google-oauth2)
-[![Quality](https://img.shields.io/codeclimate/github/jaredhanson/passport-google-oauth2.svg?label=quality)](https://codeclimate.com/github/jaredhanson/passport-google-oauth2)
-[![Dependencies](https://img.shields.io/david/jaredhanson/passport-google-oauth2.svg)](https://david-dm.org/jaredhanson/passport-google-oauth2)
-
-
 [Passport](http://passportjs.org/) strategy for authenticating with [Google](http://www.google.com/)
 using the OAuth 2.0 API.
 
@@ -14,6 +8,19 @@ By plugging into Passport, Google authentication can be easily and
 unobtrusively integrated into any application or framework that supports
 [Connect](http://www.senchalabs.org/connect/)-style middleware, including
 [Express](http://expressjs.com/).
+
+---
+
+<p align="center"><a href="http://www.tkqlhce.com/click-8907558-13433666" target="_top">1Password, the only password manager you should trust.</a> Industry-leading security and award winning design.</p>
+
+---
+
+Status:
+[![Build](https://img.shields.io/travis/jaredhanson/passport-google-oauth2.svg)](https://travis-ci.org/jaredhanson/passport-google-oauth2)
+[![Coverage](https://img.shields.io/coveralls/jaredhanson/passport-google-oauth2.svg)](https://coveralls.io/r/jaredhanson/passport-google-oauth2)
+[![Quality](https://img.shields.io/codeclimate/github/jaredhanson/passport-google-oauth2.svg?label=quality)](https://codeclimate.com/github/jaredhanson/passport-google-oauth2)
+[![Dependencies](https://img.shields.io/david/jaredhanson/passport-google-oauth2.svg)](https://david-dm.org/jaredhanson/passport-google-oauth2)
+
 
 ## Install
 
@@ -87,45 +94,15 @@ authenticate users using Facebook.  However, because both Facebook and Google
 use OAuth 2.0, the code is similar.  Simply replace references to Facebook with
 corresponding references to Google.
 
-## Contributing
+## Sponsorship
 
-#### Tests
-
-The test suite is located in the `test/` directory.  All new features are
-expected to have corresponding test cases.  Ensure that the complete test suite
-passes by executing:
-
-```bash
-$ make test
-```
-
-#### Coverage
-
-The test suite covers 100% of the code base.  All new feature development is
-expected to maintain that level.  Coverage reports can be viewed by executing:
-
-```bash
-$ make test-cov
-$ make view-cov
-```
-
-## Support
-
-#### Funding
-
-This software is provided to you as open source, free of charge.  The time and
-effort to develop and maintain this project is volunteered by [@jaredhanson](https://github.com/jaredhanson).
-If you (or your employer) benefit from this project, please consider a financial
-contribution.  Your contribution helps continue the efforts that produce this
-and other open source software.
-
-Funds are accepted via [PayPal](https://paypal.me/jaredhanson), [Venmo](https://venmo.com/jaredhanson),
-and [other](http://jaredhanson.net/pay) methods.  Any amount is appreciated.
+Passport is open source software.  Ongoing development is made possible by
+generous contributions from [individuals and corporations](https://github.com/jaredhanson/passport/blob/master/SPONSORS.md).
+To learn more about how you can help keep this project financially sustainable,
+please visit Jared Hanson's page on [Patreon](https://www.patreon.com/jaredhanson).
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2012-2016 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/passport-google-oauth2'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/passport-google-oauth2.svg' /></a>
