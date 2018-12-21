@@ -70,6 +70,40 @@ describe('OpenIDProfile.parse', function() {
       expect(profile.photos[0].value).to.equal('https://lh3.googleusercontent.com/-XxXXxxXxXXX/AAAAAAAAAAI/AAAAAAAAAAA/0000xxxxx0X/photo.jpg');
     });
   });
+
+  describe('profile with new "id" style', function() {
+    var profile;
+
+    before(function(done) {
+      fs.readFile('test/fixtures/userinfo/userinfo-with-id.json', 'utf8', function(err, data) {
+        if (err) { return done(err); }
+        profile = Profile.parse(data);
+        done();
+      });
+    });
+
+    it('should parse profile', function() {
+      expect(profile.id).to.equal('111111111111111111112');
+    });
+  });
+
+  describe('profile with new "verified_email" style', function() {
+    var profile;
+
+    before(function(done) {
+      fs.readFile('test/fixtures/userinfo/userinfo-with-verified-email.json', 'utf8', function(err, data) {
+        if (err) { return done(err); }
+        profile = Profile.parse(data);
+        done();
+      });
+    });
+
+    it('should parse profile', function() {
+      expect(profile.emails).to.have.length(1);
+      expect(profile.emails[0].value).to.equal('example@gmail.com');
+      expect(profile.emails[0].verified).to.equal(true);
+    });
+  });
   
   describe('profile without picture attribute', function() {
     var profile;
