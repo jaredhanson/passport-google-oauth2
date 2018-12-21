@@ -99,7 +99,7 @@ new GoogleStrategy({
   clientSecret: GOOGLE_CLIENT_SECRET,
   callbackURL: "http://www.example.com/auth/google/callback",
   // This option tells the strategy to use the userinfo endpoint instead
-  userProfileURL: "https://www.googleapis.com/oauth2/v2/userinfo",
+  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
 }
 ```
 
