@@ -85,6 +85,27 @@ app.get('/auth/google/callback',
   });
   ```
 
+#### Google Plus API Deprecation
+
+The default for `passport-google-oauth2` is to use the Google+ People API to
+get the profile information for the user signing in.  With this API being
+removed in early 2019 you should look towards using the OAuth 2 User Info
+endpoint instead.  You can switch to this endpoint using this configuration
+option.
+
+```javascript
+new GoogleStrategy({
+  clientID: GOOGLE_CLIENT_ID,
+  clientSecret: GOOGLE_CLIENT_SECRET,
+  callbackURL: "http://www.example.com/auth/google/callback",
+  // This option tells the strategy to use the userinfo endpoint instead
+  userProfileURL: "https://www.googleapis.com/oauth2/v2/userinfo",
+}
+```
+
+The structure of the `profile` object will be the same but you may get
+less profile information than you did before.
+
 ## Examples
 
 Developers using the popular [Express](http://expressjs.com/) web framework can
