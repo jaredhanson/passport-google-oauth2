@@ -9,7 +9,8 @@ describe('Strategy#userProfile', function() {
   describe('fetched from Google+ API', function() {
     var strategy = new GoogleStrategy({
         clientID: 'ABC123',
-        clientSecret: 'secret'
+        clientSecret: 'secret',
+        userProfileURL: 'https://www.googleapis.com/plus/v1/people/me'
       }, function() {});
   
     strategy._oauth2.get = function(url, accessToken, callback) {
@@ -101,8 +102,7 @@ describe('Strategy#userProfile', function() {
   describe('fetched from OpenID Connect user info endpoint', function() {
     var strategy = new GoogleStrategy({
         clientID: 'ABC123',
-        clientSecret: 'secret',
-        userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo'
+        clientSecret: 'secret'
       }, function() {});
   
     strategy._oauth2.get = function(url, accessToken, callback) {
@@ -148,7 +148,8 @@ describe('Strategy#userProfile', function() {
   describe('error caused by invalid token when using Google+ API', function() {
     var strategy = new GoogleStrategy({
         clientID: 'ABC123',
-        clientSecret: 'secret'
+        clientSecret: 'secret',
+        userProfileURL: 'https://www.googleapis.com/plus/v1/people/me'
       }, function() {});
     
     strategy._oauth2.get = function(url, accessToken, callback) {
@@ -179,7 +180,8 @@ describe('Strategy#userProfile', function() {
   describe('error caused by invalid token when using user info endpoint', function() {
     var strategy = new GoogleStrategy({
         clientID: 'ABC123',
-        clientSecret: 'secret'
+        clientSecret: 'secret',
+        userProfileURL: 'https://www.googleapis.com/plus/v1/people/me'
       }, function() {});
     
     strategy._oauth2.get = function(url, accessToken, callback) {
