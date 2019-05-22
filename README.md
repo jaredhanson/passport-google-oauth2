@@ -26,6 +26,11 @@ unobtrusively integrated into any application or framework that supports
 $ npm install passport-google-oauth20
 ```
 
+#### TypeScript support
+```bash
+$ npm install @types/passport-google-oauth20
+```
+
 ## Usage
 
 #### Create an Application
