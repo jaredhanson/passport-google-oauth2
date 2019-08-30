@@ -104,6 +104,32 @@ describe('Strategy', function() {
     });
   }); // authorization request with incremental authorization parameters
   
+  describe('authorization request with state parameters', function() {
+    var strategy = new GoogleStrategy({
+      clientID: 'ABC123',
+      clientSecret: 'secret'
+    }, function() {});
+    
+    
+    var url;
+  
+    before(function(done) {
+      chai.passport.use(strategy)
+        .redirect(function(u) {
+          url = u;
+          done();
+        })
+        .req(function(req) {
+          req.session = {};
+        })
+        .authenticate({ state: 'abc=123' });
+    });
+  
+    it('should be redirected', function() {
+      expect(url).to.equal('https://accounts.google.com/o/oauth2/v2/auth?state=abc%3D123&response_type=code&client_id=ABC123');
+    });
+  }); // authorization request with state parameters
+  
   describe('authorization request with Google Apps for Work parameters', function() {
     var strategy = new GoogleStrategy({
       clientID: 'ABC123',
