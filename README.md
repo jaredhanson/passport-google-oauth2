@@ -77,6 +77,25 @@ app.get('/auth/google/callback',
   });
   ```
 
+In order to add Google-specific authorization parameters to the google authoriztion
+URI, the `passport.authenticate` middleware can be given the google options in the 
+2nd parameter like so:
+
+```javascript
+app.get('/auth/google/callback', 
+  passport.authenticate('google', { 
+    failureRedirect: '/login',
+    prompt: 'select-account',
+    hd: '',
+    loginHint: '',
+    accessType: '',
+  }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+  ```
+
 ## Examples
 
 Developers using the popular [Express](http://expressjs.com/) web framework can
