@@ -89,12 +89,10 @@ app.get('/auth/google/callback',
 
 ## Examples
 
-Developers using the popular [Express](http://expressjs.com/) web framework can
-refer to an [example](https://github.com/passport/express-4.x-facebook-example)
-as a starting point for their own web applications.  The example shows how to
-authenticate users using Facebook.  However, because both Facebook and Google
-use OAuth 2.0, the code is similar.  Simply replace references to Facebook with
-corresponding references to Google.
+* [express-4.x-google-oauth2-example](https://github.com/passport/express-4.x-google-oauth2-example)
+
+  Illustrates how to use the Google strategy within an [Express](https://expressjs.com)
+  application.
 
 ## License
 
