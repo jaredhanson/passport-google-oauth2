@@ -98,4 +98,4 @@ app.get('/auth/google/callback',
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2012-2016 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2012-2021 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
