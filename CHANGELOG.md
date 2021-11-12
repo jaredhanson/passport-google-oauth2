@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [2.0.0] - 2019-03-08
+### Changed
+
+- Default user profile URL changed to `https://www.googleapis.com/oauth2/v3/userinfo`
+from `https://www.googleapis.com/plus/v1/people/me`.  This migrates from Google+
+Sign-in to Google Sign-in (not Google+), as necessitated by the [Google+ API
+shutdown](https://developers.google.com/+/api-shutdown).
+
 
 ## [1.0.0] - 2016-02-03
 
