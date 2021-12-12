@@ -1,13 +1,13 @@
 # passport-google-oauth20
 
-[Passport](http://passportjs.org/) strategy for authenticating with [Google](http://www.google.com/)
-using the OAuth 2.0 API.
+[Passport](https://www.passportjs.org/) strategy for authenticating with
+[Google](https://www.google.com/) using OAuth 2.0.
 
 This module lets you authenticate using Google in your Node.js applications.
 By plugging into Passport, Google authentication can be easily and
 unobtrusively integrated into any application or framework that supports
-[Connect](http://www.senchalabs.org/connect/)-style middleware, including
-[Express](http://expressjs.com/).
+[Connect](https://github.com/senchalabs/connect#readme)-style middleware,
+including [Express](https://expressjs.com/).
 
 ---
 
@@ -19,19 +19,15 @@ unobtrusively integrated into any application or framework that supports
 
 ---
 
-[![npm](https://img.shields.io/npm/v/passport-google-oauth20.svg)](https://www.npmjs.com/package/passport-google-oauth20)
-[![build](https://img.shields.io/travis/jaredhanson/passport-google-oauth2.svg)](https://travis-ci.org/jaredhanson/passport-google-oauth2)
-[![coverage](https://img.shields.io/coveralls/jaredhanson/passport-google-oauth2.svg)](https://coveralls.io/github/jaredhanson/passport-google-oauth2)
-[...](https://github.com/jaredhanson/passport-google-oauth2/wiki/Status)
-
 ## Install
 
-```bash
+```sh
 $ npm install passport-google-oauth20
 ```
 
 #### TypeScript support
-```bash
+
+```sh
 $ npm install @types/passport-google-oauth20
 ```
 
