@@ -66,7 +66,7 @@ support email, and developer contact information.
 
 8. Click **Add URI** under **Authorized Redirect URIs**.  Enter the URL of your
 application's OAuth 2.0 redirect endpoint.  If you are using the example app,
-enter `http://localhost:3000/oauth2/redirect`.
+enter `http://localhost:3000/oauth2/redirect/accounts.google.com`.
 
 9. Click **Create** to create the OAuth client.  The following screen will
 display your client ID and secret.  Proceed to [configure the strategy](#configure-strategy).
@@ -97,25 +97,27 @@ passport.use(new GoogleStrategy({
 ));
 ```
 
-#### Authenticate Requests
+#### Define Routes
 
-Use `passport.authenticate()`, specifying the `'google'` strategy, to
-authenticate requests.
+Two routes are needed in order to allow users to log in with their Google
+account.  The first route redirects the user to the Google, where they will
+authenticate:
 
-For example, as route middleware in an [Express](http://expressjs.com/)
-application:
-
-```javascript
-app.get('/auth/google',
+```js
+app.get('/login/google',
   passport.authenticate('google', { scope: ['profile'] }));
+```
 
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
+The second route processes the authentication response and logs the user in,
+after Google redirects the user back to the app:
+
+```js
+app.get('/oauth2/redirect/accounts.google.com',
+  passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
   function(req, res) {
-    // Successful authentication, redirect home.
     res.redirect('/');
   });
-  ```
+```
 
 ## Examples
 
