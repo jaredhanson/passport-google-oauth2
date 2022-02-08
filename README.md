@@ -65,8 +65,8 @@ support email, and developer contact information.
 7. Select **Web application** as **Application type**.
 
 8. Click **Add URI** under **Authorized Redirect URIs**.  Enter the URL of your
-application's OAuth 2.0 redirect endpoint.  If you are using the example app,
-enter `http://localhost:3000/oauth2/redirect/accounts.google.com`.
+application's OAuth 2.0 redirect endpoint.  If you are using the [example](https://github.com/passport/todos-express-google-oauth2)
+app, enter `http://localhost:3000/oauth2/redirect/google`.
 
 9. Click **Create** to create the OAuth client.  The following screen will
 display your client ID and secret.  Proceed to [configure the strategy](#configure-strategy).
