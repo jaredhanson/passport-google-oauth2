@@ -168,6 +168,12 @@ app.get('/oauth2/redirect/google',
   });
 ```
 
+## Documentation
+
+Refer to [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2/)
+for more information on integrating your application with Google APIs using
+OAuth 2.0.
+
 ## Examples
 
 * [todos-express-google-oauth2](https://github.com/passport/todos-express-google-oauth2)
