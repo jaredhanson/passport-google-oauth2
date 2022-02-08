@@ -1,7 +1,7 @@
 # passport-google-oauth20
 
 [Passport](https://www.passportjs.org/) strategy for authenticating with
-[Google](https://www.google.com/) using OAuth 2.0.
+[Google](https://www.google.com/) using [OAuth 2.0](https://www.passportjs.org/packages/passport-oauth2/).
 
 This module lets you authenticate using Google in your Node.js applications.
 By plugging into Passport, Google authentication can be easily and
