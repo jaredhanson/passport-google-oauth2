@@ -96,7 +96,7 @@ use any database of its choosing.  The example below illustrates usage of a SQL
 database.
 
 ```javascript
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
+var GoogleStrategy = require('passport-google-oauth20');
 
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
