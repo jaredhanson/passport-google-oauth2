@@ -73,13 +73,27 @@ display your client ID and secret.  Proceed to [configure the strategy](#configu
 
 #### Configure Strategy
 
-The Google authentication strategy authenticates users using a Google account
-and OAuth 2.0 tokens.  The client ID and secret obtained when creating an
-application are supplied as options when creating the strategy.  The strategy
-also requires a `verify` callback, which receives the access token and optional
-refresh token, as well as `profile` which contains the authenticated user's
-Google profile.  The `verify` callback must call `cb` providing a user to
-complete authentication.
+Once you've [registered your application](#register-application), the strategy
+needs to be configured with your application's client ID and secret, along with
+its OAuth 2.0 redirect endpoint.
+
+The strategy takes a `verify` function as an argument, which accepts
+`accessToken`, `refreshToken`, and `profile` as arguments.  `accessToken` and
+`refreshToken` are used for API access, and are not needed for authentication.
+`profile` contains the user's [profile information](https://www.passportjs.org/reference/normalized-profile/)
+stored in their Google account.  When authenticating a user, this strategy uses
+the OAuth 2.0 protocol to obtain this information via a sequence of redirects
+and API requests to Google.
+
+The `verify` function is responsible for determining the user to which the
+Google account belongs.  In cases where the account is logging in for the
+first time, a new user record is typically created automatically.  On subsequent
+logins, the existing user record will be found via its relation to the Google
+account.
+
+Because the `verify` function is supplied by the application, the app is free to
+use any database of its choosing.  The example below illustrates usage of a SQL
+database.
 
 ```javascript
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
@@ -87,12 +101,48 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://www.example.com/auth/google/callback"
+    callbackURL: 'https://www.example.com/oauth2/redirect/google',
+    scope: [ 'profile' ],
+    state: true
   },
   function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
+    db.get('SELECT * FROM federated_credentials WHERE provider = ? AND subject = ?', [
+      'https://accounts.google.com',
+      profile.id
+    ], function(err, cred) {
+      if (err) { return cb(err); }
+      if (!cred) {
+        // The account at Google has not logged in to this app before.  Create a
+        // new user record and associate it with the Google account.
+        db.run('INSERT INTO users (name) VALUES (?)', [
+          profile.displayName
+        ], function(err) {
+          if (err) { return cb(err); }
+
+          var id = this.lastID;
+          db.run('INSERT INTO federated_credentials (user_id, provider, subject) VALUES (?, ?, ?)', [
+            id,
+            'https://accounts.google.com',
+            profile.id
+          ], function(err) {
+            if (err) { return cb(err); }
+            var user = {
+              id: id,
+              name: profile.displayName
+            };
+            return cb(null, user);
+          });
+        });
+      } else {
+        // The account at Google has previously logged in to the app.  Get the
+        // user record associated with the Google account and log the user in.
+        db.get('SELECT * FROM users WHERE id = ?', [ cred.user_id ], function(err, user) {
+          if (err) { return cb(err); }
+          if (!user) { return cb(null, false); }
+          return cb(null, user);
+        });
+      }
+    };
   }
 ));
 ```
@@ -104,15 +154,14 @@ account.  The first route redirects the user to the Google, where they will
 authenticate:
 
 ```js
-app.get('/login/google',
-  passport.authenticate('google', { scope: ['profile'] }));
+app.get('/login/google', passport.authenticate('google'));
 ```
 
 The second route processes the authentication response and logs the user in,
 after Google redirects the user back to the app:
 
 ```js
-app.get('/oauth2/redirect/accounts.google.com',
+app.get('/oauth2/redirect/google',
   passport.authenticate('google', { failureRedirect: '/login', failureMessage: true }),
   function(req, res) {
     res.redirect('/');
@@ -121,13 +170,13 @@ app.get('/oauth2/redirect/accounts.google.com',
 
 ## Examples
 
-* [express-4.x-google-oauth2-example](https://github.com/passport/express-4.x-google-oauth2-example)
+* [todos-express-google-oauth2](https://github.com/passport/todos-express-google-oauth2)
 
-  Illustrates how to use the Google strategy within an [Express](https://expressjs.com)
+  Illustrates how to use the Google strategy within an [Express](https://expressjs.com/)
   application.
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2012-2021 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2012-2022 Jared Hanson <[https://www.jaredhanson.me/](https://www.jaredhanson.me/)>
