@@ -25,7 +25,7 @@ including [Express](https://expressjs.com/).
 $ npm install passport-google-oauth20
 ```
 
-##### TypeScript support
+###### TypeScript support
 
 ```sh
 $ npm install @types/passport-google-oauth20
