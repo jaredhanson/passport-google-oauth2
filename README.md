@@ -105,12 +105,13 @@ passport.use(new GoogleStrategy({
     scope: [ 'profile' ],
     state: true
   },
-  function(accessToken, refreshToken, profile, cb) {
+  function verify(accessToken, refreshToken, profile, cb) {
     db.get('SELECT * FROM federated_credentials WHERE provider = ? AND subject = ?', [
       'https://accounts.google.com',
       profile.id
     ], function(err, cred) {
       if (err) { return cb(err); }
+      
       if (!cred) {
         // The account at Google has not logged in to this app before.  Create a
         // new user record and associate it with the Google account.
@@ -170,16 +171,15 @@ app.get('/oauth2/redirect/google',
 
 ## Documentation
 
-Refer to [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2/)
-for more information on integrating your application with Google APIs using
-OAuth 2.0.
+* [Using OAuth 2.0 to Access Google APIs](https://developers.google.com/identity/protocols/oauth2/)
+
+  Official Google documentation on how to use OAuth 2.0 to access Google APIs.
 
 ## Examples
 
 * [todos-express-google-oauth2](https://github.com/passport/todos-express-google-oauth2)
 
-  Illustrates how to use the Google strategy within an [Express](https://expressjs.com/)
-  application.
+  Illustrates how to use the Google strategy within an Express application.
 
 ## License
 
