@@ -137,10 +137,10 @@ passport.use(new GoogleStrategy({
       } else {
         // The account at Google has previously logged in to the app.  Get the
         // user record associated with the Google account and log the user in.
-        db.get('SELECT * FROM users WHERE id = ?', [ cred.user_id ], function(err, user) {
+        db.get('SELECT * FROM users WHERE id = ?', [ cred.user_id ], function(err, row) {
           if (err) { return cb(err); }
-          if (!user) { return cb(null, false); }
-          return cb(null, user);
+          if (!row) { return cb(null, false); }
+          return cb(null, row);
         });
       }
     };
