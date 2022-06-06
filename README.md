@@ -143,7 +143,7 @@ passport.use(new GoogleStrategy({
           return cb(null, row);
         });
       }
-    };
+    });
   }
 ));
 ```
