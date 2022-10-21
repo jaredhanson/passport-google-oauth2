@@ -4,8 +4,8 @@
 [Google](https://www.google.com/) using [OAuth 2.0](https://www.passportjs.org/packages/passport-oauth2/).
 
 This module lets you authenticate using Google in your Node.js applications.
-By plugging into Passport, Google authentication can be easily and
-unobtrusively integrated into any application or framework that supports
+By plugging into Passport, Sign In with Google can be easily and unobtrusively
+integrated into any application or framework that supports
 [Connect](https://github.com/senchalabs/connect#readme)-style middleware,
 including [Express](https://expressjs.com/).
 
