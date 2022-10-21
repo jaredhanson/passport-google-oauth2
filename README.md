@@ -14,7 +14,7 @@ including [Express](https://expressjs.com/).
 :brain: [Understanding OAuth 2.0](https://www.passportjs.org/concepts/oauth2/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oauth20&utm_content=nav-concept) •
 :heart: [Sponsors](https://www.passportjs.org/sponsors/?utm_source=github&utm_medium=referral&utm_campaign=passport-google-oauth20&utm_content=nav-sponsors)
 
-<div>
+</div>
 
 ---
 
