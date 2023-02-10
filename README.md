@@ -164,7 +164,7 @@ app.get('/oauth2/redirect/google',
 
 ## Authors
 
-- Jared Hanson - [![LinkedIn](var/www/images/linkedin.svg)](https://www.linkedin.com/in/jaredhanson) [![GitHub](var/www/images/github.svg)](https://github.com/jaredhanson) [![Twitter](var/www/images/twitter.svg)](https://twitter.com/jaredhanson)
+- Jared Hanson - [![GitHub](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/github.svg)](https://github.com/jaredhanson) [![Twitter](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/twitter.svg)](https://twitter.com/jaredhanson) [![LinkedIn](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/linkedin.svg)](https://www.linkedin.com/in/jaredhanson)
 
 ## License
 
