@@ -16,6 +16,10 @@ including [Express](https://expressjs.com/).
 
 </div>
 
+<p align="center">
+  <sub>Built by <a href="#authors">Jared Hanson</a>.</sub>
+</p>
+
 ---
 
 <p align="center">
