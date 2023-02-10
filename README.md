@@ -16,8 +16,8 @@ including [Express](https://expressjs.com/).
 
 </div>
 
-<p align="center">
-  <sub>Built by <a href="#authors">Jared Hanson</a>.</sub>
+<p align="right">
+  <sup>Built by <a href="#authors">Jared Hanson</a>.</sub>
 </p>
 
 ---
@@ -161,6 +161,10 @@ app.get('/oauth2/redirect/google',
 * [todos-express-google-oauth2](https://github.com/passport/todos-express-google-oauth2)
 
   Illustrates how to use the Google strategy within an Express application.
+
+## Authors
+
+- Jared Hanson
 
 ## License
 
