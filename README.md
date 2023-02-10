@@ -164,7 +164,7 @@ app.get('/oauth2/redirect/google',
 
 ## Authors
 
-- Jared Hanson - ![Twitter](var/www/images/twitter.svg)
+- Jared Hanson - [![Twitter](var/www/images/twitter.svg)(https://twitter.com/jaredhanson)]
 
 ## License
 
