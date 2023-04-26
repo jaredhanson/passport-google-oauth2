@@ -16,9 +16,9 @@ including [Express](https://expressjs.com/).
 
 </div>
 
-<p align="right">
+<div align="right">
   <sup>Developed by <a href="#authors">Jared Hanson</a>.</sub>
-</p>
+</div>
 
 ---
 
