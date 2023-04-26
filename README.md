@@ -1,7 +1,7 @@
 # passport-google-oauth20
 
 [Passport](https://www.passportjs.org/) strategy for authenticating with
-[Google](https://www.google.com/) using [OAuth 2.0](https://www.passportjs.org/packages/passport-oauth2/).
+[Google](https://www.google.com/) using [OAuth 2.0](https://www.passportjs.org/features/oauth2/).
 
 This module lets you authenticate using Google in your Node.js applications.
 By plugging into Passport, Sign In with Google can be easily and unobtrusively
@@ -164,10 +164,10 @@ app.get('/oauth2/redirect/google',
 
 ## Authors
 
-- Jared Hanson { [![WWW](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/globe-12x12.svg)](https://www.jaredhanson.me/) [![LinkedIn](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/linkedin-12x12.svg)](https://www.linkedin.com/in/jaredhanson) [![Twitter](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/twitter-12x12.svg)](https://twitter.com/jaredhanson) [![GitHub](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/github-12x12.svg)](https://github.com/jaredhanson) }
+- [Jared Hanson](https://www.jaredhanson.me/) { [![WWW](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/globe-12x12.svg)](https://www.jaredhanson.me/) [![Facebook](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/facebook-12x12.svg)](https://www.facebook.com/jaredhanson) [![LinkedIn](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/linkedin-12x12.svg)](https://www.linkedin.com/in/jaredhanson) [![Twitter](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/twitter-12x12.svg)](https://twitter.com/jaredhanson) [![GitHub](https://raw.githubusercontent.com/jaredhanson/jaredhanson/master/images/github-12x12.svg)](https://github.com/jaredhanson) }
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2012-2022 Jared Hanson <[https://www.jaredhanson.me/](https://www.jaredhanson.me/)>
+Copyright (c) 2012-2023 Jared Hanson
