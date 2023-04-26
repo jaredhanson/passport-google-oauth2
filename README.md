@@ -22,11 +22,11 @@ including [Express](https://expressjs.com/).
 
 ---
 
-<p align="center">
+<div align="center">
   <sup>Advertisement</sup>
   <br>
   <a href="https://click.linksynergy.com/link?id=D*o7yui4/NM&offerid=507388.922484&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Fthe-complete-nodejs-developer-course-2%2F&u1=21vl3Skt2fz9CZkPcetSToKITTB1Zqdi0ZpnMwjAMqG7p2N3J2BC5">The Complete Node.js Developer Course</a><br>Learn Node. js by building real-world applications with Node, Express, MongoDB, Jest, and more!
-</p>
+</div>
 
 ---
 
