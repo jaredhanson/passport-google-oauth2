@@ -100,7 +100,7 @@ passport.use(new GoogleStrategy({
           profile.displayName
         ], function(err) {
           if (err) { return cb(err); }
-
+          
           var id = this.lastID;
           db.run('INSERT INTO federated_credentials (user_id, provider, subject) VALUES (?, ?, ?)', [
             id,
@@ -108,6 +108,7 @@ passport.use(new GoogleStrategy({
             profile.id
           ], function(err) {
             if (err) { return cb(err); }
+            
             var user = {
               id: id,
               name: profile.displayName
