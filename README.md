@@ -76,7 +76,7 @@ Because the `verify` function is supplied by the application, the app is free to
 use any database of its choosing.  The example below illustrates usage of a SQL
 database.
 
-```javascript
+```js
 var GoogleStrategy = require('passport-google-oauth20');
 
 passport.use(new GoogleStrategy({
