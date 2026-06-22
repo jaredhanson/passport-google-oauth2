@@ -17,10 +17,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaredhanson/passport-google-oauth2.git"
+    "url": "git+https://github.com/jaredhanson/passport-google-oauth2.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/passport-google-oauth2/issues"
+    "url": "https://github.com/jaredhanson/passport-google-oauth2/issues"
   },
   "funding": {
     "type": "github",
